@@ -23,7 +23,7 @@ class Backoffice::CataloguesController < Backoffice::ApplicationController
   end
 
   def destroy
-    if Catalogue::Delete.call(@catalogue.id)
+    if Catalogue::Delete.call(@catalogue)
       flash[:notice] = "Catalogue removed successfully"
     else
       flash[:alert] = "This Catalogue has providers/services connected to it, " +
@@ -34,7 +34,7 @@ class Backoffice::CataloguesController < Backoffice::ApplicationController
 
   def create
     permitted_attributes = permitted_attributes(Catalogue)
-    @catalogue = Catalogue.new(permitted_attributes)
+    @catalogue = Catalogue.new(**permitted_attributes, status: :unpublished)
     authorize(@catalogue)
 
     if valid_model_and_urls? && @catalogue.save(validate: false)
