@@ -24,6 +24,8 @@ Please view this file on the master branch, on stable branches it's out of date.
 - Pre-fill administrator data in catalogues creation form (@maria-j-k)
 - Fix access_type validator in offer (@maria-j-k)
 
+### Security
+- Bump ruby to 3.3.3 and other dependencies - rexml and braces (@goreck888)
 
 ## [3.57.0]
 
