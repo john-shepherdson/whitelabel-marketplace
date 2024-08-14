@@ -1,4 +1,5 @@
-%nav{ class: ("backoffice" if request.path.include?("backoffice")) }
+
+%nav
   .commons-header
     .eosc-common.top.white-label
       .container
@@ -37,6 +38,10 @@
                     %li
                       %a.dropdown-item.dropdown-profile{ href: admin_path }
                         = _("Admin")
+                  - if policy([:executive, :executive]).show?
+                    %li
+                      %a.dropdown-item.dropdown-profile{ href: executive_path }
+                        = _("Executive")
             %li
               %strong= link_to _("Logout"), destroy_user_session_path, id: "logout-btn",
               data: { turbo_method: :delete, e2e: "logout" }

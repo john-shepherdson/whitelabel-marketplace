@@ -45,10 +45,7 @@ RSpec.feature "Services in backoffice", manager_frontend: true do
       access_mode = create(:access_mode)
       service_category = create(:service_category)
 
-      Service.reindex
-
       visit backoffice_services_path
-
       click_on "Create new Service"
 
       fill_in "service_name", with: "service name"
@@ -888,8 +885,7 @@ RSpec.feature "Services in backoffice", manager_frontend: true do
     before { checkin_sign_in_as(user) }
 
     scenario "I can edit service draft" do
-      provider = create(:provider, data_administrators: [build(:data_administrator, email: user.email)])
-      service = create(:service, owners: [user], status: :draft, resource_organisation: provider)
+      service = create(:service, owners: [user], status: :draft)
 
       visit backoffice_service_path(service)
       click_on "Edit"

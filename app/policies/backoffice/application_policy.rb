@@ -4,7 +4,7 @@ class Backoffice::ApplicationPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       if user&.service_portfolio_manager?
-        scope.all
+        scope
       elsif user&.data_administrator?
         scope.managed_by(user)
       else

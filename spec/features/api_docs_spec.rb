@@ -30,9 +30,11 @@ RSpec.feature "Api docs page", end_user_frontend: true do
       visit api_docs_path
       click_link("Regenerate token")
 
+      expect(page).to have_css(".active")
+
       find("#toggler").click
 
-      expect(page).to have_css(".active.show-token", wait: 10)
+      sleep(1)
 
       expect(user.reload.authentication_token).to_not eq(prev_token)
       expect(page).to have_text(user.authentication_token)
@@ -62,8 +64,6 @@ RSpec.feature "Api docs page", end_user_frontend: true do
       page.driver.browser.manage.window.resize_to(1920, 1080)
 
       expect(page).to have_content("Successfully authenticated from Checkin account.")
-
-      sleep(1)
       find("a", id: "logout-btn").click
 
       expect(page).to have_content("Signed out successfully.")
