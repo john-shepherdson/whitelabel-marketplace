@@ -125,20 +125,6 @@ class ServicesController < ApplicationController
     empty_listed || active_filters.size.positive? || params[:q].present? || @category.present?
   end
 
-  def bundled
-    if @service.offers.published.select(&:bundled?).present?
-      @service
-        .offers
-        .published
-        .select(&:bundled?)
-        .map { |o| policy_scope(o.bundles).reject { |b| b.service.status.in?(Statusable::HIDEABLE_STATUSES) } }
-        .flatten
-        .uniq
-    else
-      []
-    end
-  end
-
   def external_search_enabled
     EXTERNAL_SEARCH_ENABLED
   end

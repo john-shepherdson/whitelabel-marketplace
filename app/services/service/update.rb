@@ -19,28 +19,6 @@ class Service::Update < Service::ApplicationService
 
     handle_bundles!(public_before)
 
-    if @service.offers.published.size == 1
-      offer_partial = {
-        service: @service,
-        order_type: @service.order_type.presence,
-        order_url: @service.order_url,
-        status: "published"
-      }
-      Offer::Update.call(@service.offers.first, offer_partial)
-    elsif @service.offers.published.empty?
-      new_offer =
-        Offer.new(
-          name: "Offer",
-          description: "#{@service.name} Offer",
-          service: @service,
-          offer_category: @service.service_categories.first || Vocabulary::ServiceCategory.find_by(name: "Other"),
-          order_type: @service.order_type.presence,
-          order_url: @service.order_url,
-          status: "published"
-        )
-      Offer::Create.call(new_offer)
-    end
-
     true
   rescue ActiveRecord::RecordInvalid
     false

@@ -33,7 +33,7 @@
       = render "components/presentable/explore_links", object: @object
       .right-panel-links
         - if !@object.public_contacts.empty? && (@question || @preview)
-          = render "components/presentable/header_component/ask_question", question_link: new_question_link,
+          = render "components/presentable/ask_question", question_link: new_question_link,
             question: @question,
             prompt: new_question_prompt,
             preview: @preview

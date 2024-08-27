@@ -6,6 +6,11 @@ class Backoffice::Services::OffersController < Backoffice::ApplicationController
   before_action :load_form_data, only: %i[fetch_subtypes]
   after_action :reindex_offer, only: %i[create update destroy]
 
+  def index
+    @offers = @service.offers
+    @question = Service::Question.new(service: @service)
+  end
+
   def new
     @offer = Offer.new(service: @service)
     authorize(@offer)

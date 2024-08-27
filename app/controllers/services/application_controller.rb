@@ -14,7 +14,7 @@ class Services::ApplicationController < ApplicationController
   helper_method :step_title, :prev_title, :next_title
 
   STEP_TITLES = {
-    offers: "Offer selection",
+    choose_offer: "Offer selection",
     information: "Access instructions",
     configuration: "Configuration",
     summary: "Final details"
