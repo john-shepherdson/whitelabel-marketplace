@@ -24,7 +24,7 @@ RSpec.feature "Services in backoffice", manager_frontend: true do
     scenario "I can see any service" do
       service = create(:service, name: "service1")
 
-      visit backoffice_service_path(service)
+      visit backoffice_service_offers_path(service)
 
       expect(page).to have_content("service1")
     end

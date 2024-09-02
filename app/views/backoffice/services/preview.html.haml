@@ -9,7 +9,7 @@
         - if @service.persisted?
           = link_to _("Go back to edit"), edit_backoffice_service_path(@service),
             class: "btn btn-warning", "data-turbo": false
-          = link_to _("Confirm changes"), backoffice_service_path(@service),
+          = link_to _("Confirm changes"), backoffice_service_offers_path(@service),
             class: "btn btn-success", method: :put, "data-turbo": false
         - else
           = link_to _("Go back to edit"), new_backoffice_service_path,

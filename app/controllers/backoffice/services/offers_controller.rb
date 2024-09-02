@@ -23,7 +23,7 @@ class Backoffice::Services::OffersController < Backoffice::ApplicationController
     @offer = Offer::Create.call(template)
 
     if @offer.persisted?
-      redirect_to backoffice_service_path(@service), notice: "New offer created successfully"
+      redirect_to backoffice_service_offers_path(@service), notice: "New offer created successfully"
     else
       render :new, status: :bad_request
     end
@@ -41,7 +41,7 @@ class Backoffice::Services::OffersController < Backoffice::ApplicationController
   def update
     template = permitted_attributes(Offer)
     if Offer::Update.call(@offer, transform_attributes(template, @service))
-      redirect_to backoffice_service_path(@service), notice: "Offer updated successfully"
+      redirect_to backoffice_service_offers_path(@service), notice: "Offer updated successfully"
     else
       render :edit, status: :bad_request
     end
@@ -50,7 +50,7 @@ class Backoffice::Services::OffersController < Backoffice::ApplicationController
   def destroy
     @offer = @service.offers.find_by(iid: params[:id])
     if Offer::Delete.call(@offer)
-      redirect_to backoffice_service_path(@service), notice: "Offer removed successfully"
+      redirect_to backoffice_service_offers_path(@service), notice: "Offer removed successfully"
     else
       render :edit, status: :bad_request
     end

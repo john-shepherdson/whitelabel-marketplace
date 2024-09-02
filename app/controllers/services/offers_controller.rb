@@ -10,6 +10,7 @@ class Services::OffersController < ApplicationController
 
   def index
     @service = Service.includes(:offers).friendly.find(params[:service_id])
+    redirect_to service_path(@service) if @service.offers.published.empty?
     @service.store_analytics
     @service.monitoring_status = fetch_status(@service.pid)
 

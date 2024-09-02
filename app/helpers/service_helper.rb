@@ -101,7 +101,7 @@ module ServiceHelper
     case controller_name
     when "ordering_configurations"
       edit_service_ordering_configuration_offer_path(service, offer, from: params[:from])
-    when "services"
+    else
       edit_backoffice_service_offer_path(service, offer)
     end
   end
@@ -110,7 +110,7 @@ module ServiceHelper
     case controller_name
     when "ordering_configuration"
       edit_service_ordering_configuration_bundle_path(service, bundle, from: params[:from])
-    when "service"
+    else
       edit_backoffice_service_bundle_path(service, bundle)
     end
   end

@@ -27,7 +27,7 @@ class ServicesController < ApplicationController
                       anchor: ("offer-#{params["anchor"]}" if params["anchor"].present?)
                     )
       when "service"
-        redirect_to service_path(
+        redirect_to service_offers_path(
                       Service.friendly.find(params["object_id"]),
                       q: params["q"],
                       anchor: ("offer-#{params["anchor"]}" if params["anchor"].present?)
