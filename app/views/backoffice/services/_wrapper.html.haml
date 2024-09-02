@@ -1,5 +1,5 @@
 .container.p-0.backoffice
-  - if service.offers.blank? && !@service.deleted?
+  - if service.offers.blank? && !service.deleted?
     .alert.alert-danger.mb-0.text-center
       = _("This service has no choose_offers. Add one offer to make possible for a user to Access the service.")
   - elsif service.published? && service.offers.published.blank?

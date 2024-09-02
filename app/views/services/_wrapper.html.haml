@@ -17,7 +17,7 @@
       "data-comparison-target": "bar", "data-e2e": "comparison-bar" }
       = render "comparisons/bar", services: compare_services, category: category
   .tab-content
-    #desc.tab-pane.container.active.desc{ "aria-labelledby" => "home-tab", role: "tabpanel" }
+    .tab-pane.container.active.desc{ id: tab_id, "aria-labelledby": "home-tab", role: "tabpanel" }
       .row.justify-content-between
         %main.col-12.col-xl-9.pr-4.pt-4{ "data-shepherd-tour-target": "service-about" }
           = yield

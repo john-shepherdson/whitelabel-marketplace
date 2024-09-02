@@ -6,8 +6,6 @@
   = render Presentable::DescriptionComponent.new(object: @service,
     similar_services: @similar_services, related_services: @related_services,
     from: "backoffice_service") do |c|
-    - c.description_panels do
-      = render "layouts/common_parts/services/offers", offers: @offers, service: @service, bundles: @bundles
     - c.additional_backoffice_info do
       .right-panel-links.pt-4.pb-4
         = render "components/presentable/updates", object: @service
