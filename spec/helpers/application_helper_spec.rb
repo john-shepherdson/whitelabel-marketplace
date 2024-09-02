@@ -52,7 +52,7 @@ describe ApplicationHelper, type: :helper, backend: true do
       service = create(:service)
 
       expect(back_link_to("Back", service, prefix: :backoffice)).to eq(
-        "<a href=\"#{backoffice_service_offers_path(service)}\">Back</a>"
+        "<a href=\"#{backoffice_service_path(service)}\">Back</a>"
       )
     end
 

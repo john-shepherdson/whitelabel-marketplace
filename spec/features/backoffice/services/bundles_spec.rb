@@ -39,7 +39,7 @@ RSpec.feature "Bundles in backoffice", manager_frontend: true do
       scenario "I can update bundle" do
         bundle.save
         second_offer = create(:offer)
-        visit backoffice_service_offers_path(service)
+        visit backoffice_service_offers_path(bundle.service)
 
         within("#bundle-#{bundle.iid}") { click_on "Edit" }
 

@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class Services::OffersController < ApplicationController
-  include Service::Searchable
-  include Service::Categorable
   include Service::Autocomplete
   include Service::Comparison
   include Service::Monitorable
@@ -10,7 +8,7 @@ class Services::OffersController < ApplicationController
 
   def index
     @service = Service.includes(:offers).friendly.find(params[:service_id])
-    redirect_to service_path(@service) if @service.offers.published.empty?
+    redirect_to service_path(@service, q: session[:query][:q]) if @service.offers.published.empty?
     @service.store_analytics
     @service.monitoring_status = fetch_status(@service.pid)
 

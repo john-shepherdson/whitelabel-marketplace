@@ -27,7 +27,7 @@ class Services::ApplicationController < ApplicationController
   end
 
   def ensure_in_session!
-    redirect_to service_offers_path(@service), alert: "Service request template not found" unless @saved_state
+    redirect_to service_choose_offer_path(@service), alert: "Service request template not found" unless @saved_state
   end
 
   def load_and_authenticate_service!

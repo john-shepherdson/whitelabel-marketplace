@@ -49,7 +49,7 @@ RSpec.feature "Service searching in top bar", js: true, end_user_frontend: true 
     expect(page).to have_css("#-option-0")
     find(:css, "li[id='-option-0']").click
     expect(page).to have_content(service.name)
-    expect(current_path).to eq(service_offers_path(service))
+    expect(current_path).to eq(service_path(service))
   end
 
   scenario "doesn't show unpublished records", js: true, search: true do
@@ -77,7 +77,7 @@ RSpec.feature "Service searching in top bar", js: true, end_user_frontend: true 
            search: true do
     service = create(:service)
     visit services_path(object_id: service.id, type: "service")
-    expect(current_path).to eq(service_offers_path(service))
+    expect(current_path).to eq(service_path(service))
   end
 
   scenario "redirect to provider path when selecting provider_id by autocomplete controller", js: true, search: true do

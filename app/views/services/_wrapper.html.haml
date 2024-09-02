@@ -1,4 +1,4 @@
-%div
+%div{ "data-controller": "#{"preview" if preview}" }
   .container{ class: "#{"suspended" if service.suspended?}", "data-controller": "comparison",
     "data-shepherd-tour-target": "overview_10" }
     .pt-4.service-box-redesign.service-detail{ "data-shepherd-tour-target": "service-box" }
@@ -7,10 +7,16 @@
                             abbreviation: service.abbreviation,
                             subtitle: service.tagline,
                             comparison_enabled: comparison_enabled,
-                            preview: local_assigns[:preview] || service.suspended?,
+                            preview: preview || service.suspended?,
                             favourite_services: favourite_services) do |c|
         - c.buttons do
-          = render "components/presentable/header_component/order_buttons", service: service
+          - case params[:from]
+          - when "ordering_configuration"
+            = render "components/presentable/header_component/ordering_configuration_buttons", service: service
+          - when "backoffice_service"
+            = render "components/presentable/header_component/backoffice_service_buttons", service: service
+          - else
+            = render "components/presentable/header_component/order_buttons", service: service, preview: preview
       = render "services/tabs", service: service
     - dynamic_class = (session[:comparison]&.size || 0).positive? ? "d-block" : "d-none"
     #comparison-bar.comparison-bar.fixed-bottom{ class: dynamic_class,
@@ -28,7 +34,7 @@
               = render "components/presentable/ask_question", question_link: new_question_link(service),
                 question: question,
                 prompt: new_question_prompt(service),
-                preview: local_assigns[:preview]
-            = render Presentable::LinksComponent.new(object: service, preview: local_assigns[:preview])
+                preview: preview
+            = render Presentable::LinksComponent.new(object: service, preview: preview)
           = render Presentable::ProviderInfoComponent.new(base: service,
-          preview: local_assigns[:preview]) if service.respond_to?(:resource_organisation)
+          preview: preview) if service.respond_to?(:resource_organisation)

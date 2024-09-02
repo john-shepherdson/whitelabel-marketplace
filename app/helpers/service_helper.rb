@@ -126,4 +126,11 @@ module ServiceHelper
   def get_only_countries(locations)
     locations.reject { |c| Country.regions.include? c }
   end
+
+  def new_offer_prompt
+    _(
+      "Set up custom offers within your service to allow users to place orders. " +
+        "By defining specific parameters, you make your service available and perfectly suited to different needs."
+    )
+  end
 end

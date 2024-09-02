@@ -8,6 +8,7 @@ class Backoffice::Services::OffersController < Backoffice::ApplicationController
 
   def index
     @offers = @service.offers
+    @bundles = @service.bundles
     @question = Service::Question.new(service: @service)
   end
 

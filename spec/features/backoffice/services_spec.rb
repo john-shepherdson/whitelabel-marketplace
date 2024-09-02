@@ -29,7 +29,7 @@ RSpec.feature "Services in backoffice", manager_frontend: true do
       expect(page).to have_content("service1")
     end
 
-    scenario "I can create new service with default offer" do
+    scenario "I can create new service without default offer" do
       category = create(:category)
       provider = create(:provider)
       scientific_domain = create(:scientific_domain)
@@ -101,9 +101,9 @@ RSpec.feature "Services in backoffice", manager_frontend: true do
 
       fill_in "service_sources_attributes_0_eid", with: "12345a"
 
-      expect { click_on "Create Service" }.to change { Offer.count }.by(1).and have_enqueued_job(
-              Ess::UpdateJob
-            ).exactly(2).times
+      expect { click_on "Create Service" }.to have_enqueued_job(Ess::UpdateJob).exactly(1).times
+
+      click_on "About"
 
       expect(page).to have_content("service name")
       expect(page).to have_content("service description")
@@ -157,6 +157,8 @@ RSpec.feature "Services in backoffice", manager_frontend: true do
       click_on "Create Service"
 
       expect(page).to have_content("New service created successfully")
+
+      click_on "About"
 
       expect(page).to have_content("service name")
       expect(page).to have_content("service description")
@@ -260,7 +262,7 @@ RSpec.feature "Services in backoffice", manager_frontend: true do
       click_on "Go back to edit"
       expect { click_on "Create Service" }.to change { Service.count }.by(1).and have_enqueued_job(
               Ess::UpdateJob
-            ).exactly(2).times
+            ).exactly(1).times
       expect(page).to have_content("service name")
     end
 
@@ -335,7 +337,7 @@ RSpec.feature "Services in backoffice", manager_frontend: true do
       click_on "Edit"
 
       fill_in "service_name", with: "updated name"
-      expect { click_on "Update Service" }.to have_enqueued_job(Ess::UpdateJob).exactly(2).times
+      expect { click_on "Update Service" }.to have_enqueued_job(Ess::UpdateJob).exactly(1).times
 
       expect(page).to have_content("updated name")
     end

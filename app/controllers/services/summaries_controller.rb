@@ -41,7 +41,7 @@ class Services::SummariesController < Services::ApplicationController
       session.delete(:selected_project)
       send_user_action
       Matomo::SendRequestJob.perform_later(project_item, "AddToProject")
-      redirect_to project_service_offers_path(project_item.project, project_item),
+      redirect_to project_service_path(project_item.project, project_item),
                   notice: project_item.orderable? ? "Offer ordered successfully" : "Offer pinned successfully"
     else
       redirect_to url_for([@service, prev_visible_step_key]), alert: "Service request configuration is invalid"
