@@ -1,24 +1,22 @@
 .landing-header
-  %section.text-center.heading
+  %section.heading
     .container
       .row.py-lg-3
-        .col-md-8.col-sm-12.mx-auto
-          %h1 Browse Marketplace
+        .col-md-5.col-sm-12.pr-0
+          %h1 Polska Platforma Otwartej Nauki
+          %p.intro-text
+            Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji naukowych
+            oraz narzędzi do prowadzenia badań naukowych
           = render "services/search",
           categories: @siblings || @root_categories,
           query_params: @query_params || {}
 %section.research-activity
   .container
-    .activity-wrapper
-      - @research_activities.each do |location|
-        %a.activity{ href: services_path(research_activities: location.id) }
-          .activity-icon
-            - logo = location.logo
-            - logo = logo.attached? && logo.persisted? ? logo.variant(resize: "84x84") : "landing_page/ico-01.svg"
-            = image_tag logo, alt: location.name
-          .activity-texts
-            .activity-title= location.name
-            .activity-subtitle= location.description
+    .row
+      .col-md-4.col-sm-12
+        = image_tag "eoscpl-pic-01.jpg", alt: "Service name", class: "img-fluid"
+      .col-md-8.col-sm-12
+        www
 
     .activity-wrapper
       .text-wrapper

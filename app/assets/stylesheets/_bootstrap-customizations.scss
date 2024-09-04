@@ -6976,28 +6976,28 @@ abbr[title] {
   }
 
   .landing-header {
-    background: var(--Linear, linear-gradient(180deg, #fff 0%, #edf4ff 100%));
-    padding: 90px 0 110px;
+    background: url("eoscpl-topmap.jpg") no-repeat 50% 0;
+    background-size: 100% auto;
+    padding: 95px 0 90px;
 
     .logo-box {
       margin-bottom: 30px;
     }
 
     h1 {
-      color: $palette-black;
+      color: $palette-white;
       font-weight: 500;
-      font-size: 30px;
-      line-height: 39px;
-      margin: 0 0 25px;
+      font-size: 24px;
+      line-height: 1.3;
+      margin: 0 0 15px;
     }
 
-    p {
-      color: $landing-01;
-      font-weight: 400;
+    .intro-text {
+      color: $palette-white;
+      font-weight: 300;
       font-size: 16px;
-      line-height: 20px;
-      max-width: 520px;
-      margin: 0 auto 48px;
+      line-height: 140%;
+      margin: 0 0 25px;
     }
 
     .searchbar {
@@ -7008,15 +7008,14 @@ abbr[title] {
       }
 
       input {
-        border-radius: 8px 0 0 8px;
-        border: 1px solid $landing-01;
+        border-radius: 0 0 0 24px;
+        border: none;
         border-right: 0;
       }
 
       button {
-        border-radius: 0 8px 8px 0;
-        border: 1px solid $landing-01;
-        border-left: 0;
+        border-radius: 0 24px 24px 0;
+        border: none;
 
         svg {
           font-size: 20px;
@@ -7794,12 +7793,16 @@ abbr[title] {
   column-gap: 8px;
 
   a {
+    color: $palette-white;
+    text-decoration: underline;
+
     &:hover {
+      opacity: 0.7;
       text-decoration: underline;
     }
 
     &:focus {
-      border: 1px solid $custom-12;
+      border: 1px solid $palette-white;
       text-decoration: none;
     }
   }
@@ -7807,6 +7810,10 @@ abbr[title] {
 
 .eosc-common {
   &.white-label {
+    &.top {
+      padding: 28px 0 24px;
+    }
+
     .container {
       padding-left: 45px !important;
       padding-right: 45px !important;
@@ -7826,9 +7833,9 @@ abbr[title] {
 
     .left-links {
       .header-logo-whitelabel {
-        width: 160px;
-        height: 57px;
-        background: url("white-label-logo.png") center no-repeat;
+        width: 251px;
+        height: 44px;
+        background: url("eoscpl-logo.svg") center no-repeat;
         display: block;
       }
     }
@@ -8384,7 +8391,7 @@ footer {
 
 .browse {
   width: 637px;
-  color: $landing-01;
+  color: $palette-white;
   margin: 12px auto 0;
 
   &.whitelabel {
@@ -8434,8 +8441,8 @@ footer {
     }
 
     .searchbar__select {
-      border-top: 1px solid $landing-01;
-      border-bottom: 1px solid $landing-01;
+      border: none;
+      width: 220px;
     }
 
     input {
