@@ -7025,7 +7025,7 @@ abbr[title] {
   }
 
   .research-activity {
-    padding: 75px 0 75px;
+    padding: 72px 0;
 
     h2 {
       font-weight: 600;
@@ -7217,11 +7217,14 @@ abbr[title] {
     padding: 75px 0;
 
     h3 {
-      font-size: 24px;
-      line-height: 140%;
-      font-weight: 400;
-      margin: 0 0 25px;
-      color: $landing-02;
+      color: $eoscpl-01;
+      font-family: "Quicksand";
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 140%; /* 44.8px */
+      letter-spacing: 0.64px;
+      margin: 0 0 30px;
+      padding: 0;
     }
 
     .lead {
@@ -7946,12 +7949,12 @@ abbr[title] {
 }
 
 .popular-services-box {
-  border-radius: 8px;
-  border: 1px solid $custom-17;
+  border-radius: 32px 0 32px 32px;
+  border: 2px solid $eoscpl-02;
   padding: 24px;
 
   &:hover {
-    border: 1px solid $landing-01;
+    border: 2px solid $eoscpl-01;
   }
 
   .popular-top {
@@ -7968,34 +7971,36 @@ abbr[title] {
   }
 
   .popular-title {
-    color: $landing-02;
+    color: $eoscpl-03;
+    font-family: "Quicksand";
     font-size: 24px;
-    font-weight: 400;
-    line-height: 140%;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0.48px;
   }
 
   .popular-provider {
     color: $landing-01;
     font-size: 14px;
-    font-weight: 400;
-    line-height: 150%;
+    font-weight: 300;
+    line-height: 130%;
     padding-bottom: 15px;
-    margin: 10px 0 15px;
-    border-bottom: 1px solid $choices-disabled-background-color;
+    margin: 15px 0 16px;
+    border-bottom: 2px solid $eoscpl-04;
   }
 
   .popular-description {
     color: $landing-01;
     font-size: 14px;
-    font-weight: 400;
-    line-height: 150%;
+    font-weight: 300;
+    line-height: 140%;
     padding-bottom: 15px;
     margin: 0 0 17px;
     flex-grow: 1;
   }
   // scss-lint:disable all
   .taglist-holder {
-    border-top: 1px solid $choices-disabled-background-color;
+    border-top: 2px solid $eoscpl-04;
     padding-top: 15px;
     display: flex;
     flex-wrap: wrap;
@@ -8773,4 +8778,234 @@ footer {
 .backoffice-back-link {
   display: block;
   margin-top: 25px;
+}
+
+.eoscpl-intro {
+  display: inline-block;
+  padding: 24px;
+  margin-bottom: 30px;
+  border-radius: 0 32px 32px;
+  border: 2px solid $eoscpl-01;
+
+  .eoscpl-intro-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: $eoscpl-01;
+    line-height: 140%;
+    margin-bottom: 12px;
+  }
+
+  .eoscpl-intro-desc {
+    color: $eoscpl-03;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 140%;
+    margin-bottom: 30px;
+  }
+
+  .eoscpl-more-link {
+    display: flex;
+    padding: 8px 20px;
+    justify-content: space-between;
+    font-weight: 400;
+    align-items: center;
+    color: $palette-white;
+    border-radius: 32px;
+    background: $eoscpl-01;
+    float: right;
+  }
+
+  &:hover {
+    border: 2px solid $eoscpl-02;
+
+    .eoscpl-intro-title {
+      color: $eoscpl-02;
+    }
+
+    .eoscpl-more-link {
+      background: $eoscpl-02;
+    }
+  }
+}
+
+.partners {
+  padding: 72px 0;
+  background: $eoscpl-01;
+  color: $palette-white;
+
+  h3 {
+    font-family: "Quicksand";
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: 0.64px;
+    color: $palette-white;
+    margin-bottom: 30px;
+  }
+
+  .partners-title {
+    padding: 4px 15px;
+    color: $palette-white;
+    font-family: "Quicksand";
+    background: $palette-black;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 27px;
+  }
+
+  .partner-desc {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 140%; /* 19.6px */
+  }
+
+  .partners-link {
+    float: right;
+    display: flex;
+    margin-top: 35px;
+    width: 160px;
+    padding: 8px 20px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 32px;
+    border: 2px solid $palette-white;
+    color: $palette-white;
+
+    &:hover {
+      background: $palette-white;
+      color: $eoscpl-01;
+    }
+  }
+}
+
+.open-science {
+  padding: 75px 0;
+
+  h3 {
+    font-family: "Quicksand";
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: 0.64px;
+    color: $eoscpl-01;
+    margin-bottom: 30px;
+  }
+
+  .openscience-intro {
+    display: flex;
+    padding: 24px;
+    margin-bottom: 36px;
+    border-radius: 32px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    border: 2px solid $eoscpl-01;
+
+    &.top-intro {
+      border-bottom-left-radius: 0;
+    }
+
+    &.middle-intro {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+
+    &.bottom-intro {
+      border-top-left-radius: 0;
+    }
+
+    .openscience-container {
+      width: 75%;
+
+      .openscience-intro-title {
+        font-size: 24px;
+        font-weight: 500;
+        color: $eoscpl-01;
+        line-height: 140%;
+        margin-bottom: 14px;
+      }
+
+      .openscience-intro-desc {
+        color: $eoscpl-03;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 140%;
+      }
+    }
+
+    .openscience-more-link {
+      display: flex;
+      padding: 8px 20px;
+      justify-content: space-between;
+      font-weight: 400;
+      align-items: center;
+      color: $eoscpl-01;
+      column-gap: 25px;
+      border-radius: 32px;
+      background: $palette-white;
+      border: 2px solid $eoscpl-01;
+      float: right;
+    }
+
+    &:hover {
+      border: 2px solid $eoscpl-02;
+
+      .openscience-intro-title {
+        color: $eoscpl-02;
+      }
+
+      .openscience-more-link {
+        background: $eoscpl-02;
+        color: $palette-white;
+        border: 2px solid $eoscpl-02;
+      }
+    }
+  }
+}
+
+.programme {
+  background: $eoscpl-01;
+  padding: 72px 0;
+  color: $palette-white;
+  font-size: 14px;
+  line-height: 140%;
+
+  h4 {
+    font-family: "Quicksand";
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: 0.64px;
+    color: $palette-white;
+    margin-bottom: 0;
+    text-align: right;
+    padding: 0;
+    border: none;
+  }
+
+  p {
+    padding-top: 10px;
+  }
+
+  .d-flex {
+    align-items: flex-end;
+  }
+
+  .programme-link {
+    float: right;
+    display: flex;
+    margin-top: 35px;
+    width: 100%;
+    padding: 8px 20px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 32px;
+    border: 2px solid $palette-white;
+    color: $palette-white;
+
+    &:hover {
+      background: $palette-white;
+      color: $eoscpl-01;
+    }
+  }
 }

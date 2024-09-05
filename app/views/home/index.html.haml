@@ -16,48 +16,133 @@
       .col-md-4.col-sm-12
         = image_tag "eoscpl-pic-01.jpg", alt: "Service name", class: "img-fluid"
       .col-md-8.col-sm-12
-        www
+        .eoscpl-intro.right-intro
+          .eoscpl-intro-title
+            Zasoby Polskie
+          .eoscpl-intro-desc
+            Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
+            prowadzenia badań naukowych. wobiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
+            prowadzenia badań naukowych. wiarygodnych informacji naukowych oraz narzędzi do
+          %a.eoscpl-more-link{ href: "#" }
+            Przeglądaj zasoby Polskie
+            %i.fas.fa-arrow-right.ml-2
 
-    .activity-wrapper
-      .text-wrapper
-        Browse
-        %span all resources
-        in one place:
-      .text-wrapper
-        %a.btn{ href: services_path } Browse All Resources
+        .eoscpl-intro.right-intro
+          .eoscpl-intro-title
+            Zasoby Unii Europejskiej
+          .eoscpl-intro-desc
+            Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
+            prowadzenia badań naukowych. wobiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
+            prowadzenia badań naukowych. wiarygodnych informacji naukowych oraz narzędzi do
+          %a.eoscpl-more-link{ href: "#" }
+            Przeglądaj zasoby UE
+            %i.fas.fa-arrow-right.ml-2
 
-%section.questions
+%section.partners
   .container
-    .questions-wrapper
-      .row
-        .col-md-4.col-sm-12
-          %h3 Q&A
-          %p
-            Check out our Q&A guide to find answers to your questions. It's designed to help you understand and solve
-            common issues. If you still have questions after reading the guide, don’t worry:
-          %a.white-link{ href: help_path }
-            See user guide
-            %i.fa.fa-arrow-right
-        .col-md-8.col-sm-12
-          #accordion-qa.accordion
-            -# Here should be user defined section of FAQ, now is hardcoded id
-            - HelpItem.where(help_section_id: 2).order(:position).each do |help_item|
-              .qa-box
-                %div{ id: "heading-#{help_item.id}" }
-                  %button.qa-button.collapsed{ "data-toggle": "collapse", "data-target": "#collapse-#{help_item.id}",
-                  "aria-expanded": "false", "aria-controls": "collapse-#{help_item.id}" }
-                    = help_item.title
-                .collapse{ id: "collapse-#{help_item.id}", "aria-labelledby": "heading-#{help_item.id}",
-                           "data-parent": "#accordion-qa" }
-                  = help_item.content
+    %h3 Dowiedz się więcej o naszych partnerach
+    .row
+      .col-md-4.col-sm-12
+        .partners-pic
+          = image_tag "eoscpl-news-01.jpg", alt: "Service name", class: "img-fluid"
+        .partners-title Aktualności
+        .partners-desc
+          Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
+          prowadzenia badań naukowych. Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji
+          naukowych oraz narzędzi do prowadzenia badań naukowych. Uzyskaj dostęp do milionów obiektów badawczych,
+          wiarygodnych informacji naukowych oraz narzędzi do prowadzenia badań
+        %a.partners-link{ href: "#" }
+          Sprawdź
+          %i.fa.fa-arrow-right
 
-%section.learn
-  = render_sections("learn-more")
+      .col-md-4.col-sm-12
+        .partners-pic
+          = image_tag "eoscpl-news-02.jpg", alt: "Service name", class: "img-fluid"
+        .partners-title Aktualności
+        .partners-desc
+          Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
+          prowadzenia badań naukowych. Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji
+          naukowych oraz narzędzi do prowadzenia badań naukowych. Uzyskaj dostęp do milionów obiektów badawczych,
+          wiarygodnych informacji naukowych oraz narzędzi do prowadzenia badań
+        %a.partners-link{ href: "#" }
+          Sprawdź
+          %i.fa.fa-arrow-right
+
+      .col-md-4.col-sm-12
+        .partners-pic
+          = image_tag "eoscpl-news-03.jpg", alt: "Service name", class: "img-fluid"
+        .partners-title Aktualności
+        .partners-desc
+          Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
+          prowadzenia badań naukowych. Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji
+          naukowych oraz narzędzi do prowadzenia badań naukowych. Uzyskaj dostęp do milionów obiektów badawczych,
+          wiarygodnych informacji naukowych oraz narzędzi do prowadzenia badań
+        %a.partners-link{ href: "#" }
+          Sprawdź
+          %i.fa.fa-arrow-right
+
+%section.open-science
+  .container
+    %h3 Polska Platforma Otwartej Nauki
+    .row
+      .col-md-8.col-sm-12
+        .openscience-intro.top-intro
+          .openscience-container
+            .openscience-intro-title
+              Polskie zasoby
+            .openscience-intro-desc
+              Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
+          %a.openscience-more-link{ href: "#" }
+            Sprawdź
+            %i.fas.fa-arrow-right.ml-2
+
+        .openscience-intro.middle-intro
+          .openscience-container
+            .openscience-intro-title
+              Polskie zasoby
+            .openscience-intro-desc
+              Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
+          %a.openscience-more-link{ href: "#" }
+            Sprawdź
+            %i.fas.fa-arrow-right.ml-2
+
+        .openscience-intro.bottom-intro
+          .openscience-container
+            .openscience-intro-title
+              Polskie zasoby
+            .openscience-intro-desc
+              Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
+          %a.openscience-more-link{ href: "#" }
+            Sprawdź
+            %i.fas.fa-arrow-right.ml-2
+
+      .col-md-4.col-sm-12
+        = image_tag "eoscpl-pic-02.jpg", alt: "Service name", class: "img-fluid"
+
+%section.programme
+  .container
+    .row
+      .col-md-3.col-sm-12
+        %h4
+          EOSC
+          %br
+          National Polish Programme
+      .col-md-6.col-sm-12
+        %p
+          Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
+          prowadzenia badań naukowych. Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji
+          naukowych oraz narzędzi do prowadzenia badań naukowych. Uzyskaj dostęp do milionów obiektów badawczych,
+          wiarygodnych informacji naukowych oraz narzędzi do prowadzenia badań naukowych. Uzyskaj dostęp do milionów
+          obiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do prowadzenia badań naukowych.
+      .col-md-3.col-sm-12.d-flex
+        %a.programme-link{ href: "#" }
+          Przeglądaj wszystkie zasoby
+          %i.fa.fa-arrow-right
 
 -# Here should be = render_sections("use-cases") - below is a placeholder
 %section.research
   .container
-    %h3 Popular services
+    %h3 Popularne serwisy
     .row
       - @services.each do |service|
         .col-md-3.col-sm-12.d-flex.align-items-stretch
