@@ -8023,7 +8023,7 @@ abbr[title] {
 }
 
 .totop-wrapper {
-  background: $alert-bg;
+  background: $eoscpl-05;
   padding: 12px 0;
 
   a {
@@ -8036,10 +8036,15 @@ abbr[title] {
 }
 
 footer {
-  background: $landing-02;
+  background: $eoscpl-01 url("eoscpl-footer-bg.svg") no-repeat;
+  background-position: right 0;
+
+  .footer-logo {
+    margin-top: 70px;
+  }
 
   .footer-left {
-    padding: 48px 65px 18px 15px;
+    padding: 70px 65px 18px 15px;
     color: $palette-white;
 
     .footer-row {
@@ -8059,7 +8064,11 @@ footer {
           color: $palette-white;
 
           .menu-title {
-            font-weight: 600;
+            font-family: "Quicksand";
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 140%; /* 33.6px */
+            letter-spacing: 0.48px;
             margin-bottom: 21px;
           }
 
@@ -8128,267 +8137,6 @@ footer {
       .widget-header-place {
         font-size: 13px;
         line-height: 16px;
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .eosc-common.top {
-    .container {
-      padding-left: 10px !important;
-      padding-right: 10px !important;
-    }
-  }
-
-  .eosc-common.white-label {
-    .left-links {
-      .header-logo-whitelabel {
-        width: 100px;
-        height: 32px;
-        background-size: contain;
-        margin-top: 5px;
-      }
-    }
-  }
-
-  .landing_page {
-    .landing-header {
-      padding: 35px 0;
-
-      h1 {
-        font-size: 20px;
-        line-height: 27px;
-        margin: 0 0 20px;
-      }
-
-      p {
-        font-size: 14px;
-        line-height: 20px;
-        max-width: 90%;
-        margin: 0 auto 30px;
-      }
-
-      .browse {
-        width: 95%;
-        margin: 25px auto 0;
-        text-align: center;
-        display: block !important;
-
-        .browse-label {
-          text-align: center;
-          margin-bottom: 10px;
-        }
-
-        .solutions-box {
-          display: block;
-
-          a {
-            margin: 0 5px 15px;
-            display: inline-block;
-          }
-        }
-      }
-    }
-
-    .research-activity {
-      padding: 50px 0;
-
-      h2 {
-        font-size: 25px;
-        line-height: 30px;
-      }
-
-      .activity {
-        width: 95%;
-        margin: 0 auto 25px;
-
-        .activity-texts {
-          .activity-title {
-            font-size: 15px;
-            line-height: 20px;
-            margin-bottom: 5px;
-          }
-
-          .activity-subtitle {
-            font-size: 13px;
-            line-height: 18px;
-          }
-        }
-
-        &:hover {
-          .activity-icon {
-            margin: 0 20px 0 0;
-          }
-        }
-      }
-
-      .activity-wrapper {
-        display: block;
-
-        .text-wrapper {
-          display: block;
-          padding-top: 10px;
-          width: 100%;
-          font-size: 16px;
-          text-align: center;
-          line-height: 28px;
-        }
-      }
-    }
-
-    .support {
-      padding: 0 0 50px;
-
-      h3 {
-        font-size: 25px;
-        line-height: 30px;
-        margin: 40px 0 25px;
-      }
-    }
-
-    .eosc-navy {
-      padding: 45px 15px 45px;
-
-      .mb-5 {
-        text-align: center;
-        margin-bottom: 15px;
-      }
-
-      h4 {
-        font-size: 16px;
-        line-height: 22px;
-        margin: 0;
-        text-align: center;
-      }
-
-      .eosc-info-icon {
-        img {
-          width: 45px;
-        }
-      }
-    }
-
-    .provider {
-      padding: 45px 15px 60px;
-
-      h3 {
-        font-size: 20px;
-        line-height: 25px;
-        margin: 25px 0;
-      }
-
-      .communities {
-        margin-top: 100px;
-
-        .lead {
-          font-size: 18px;
-          line-height: 24px;
-          margin: 0 auto 40px;
-        }
-      }
-    }
-
-    .research {
-      padding: 40px 15px 50px;
-
-      h3 {
-        font-size: 25px;
-        line-height: 30px;
-      }
-
-      h4 {
-        font-size: 19px;
-        line-height: 23px;
-      }
-
-      .lead {
-        font-size: 16px;
-        line-height: 26px;
-      }
-
-      .carousel-box {
-        margin-bottom: 30px;
-        height: auto;
-        padding-bottom: 20px;
-      }
-    }
-
-    .questions {
-      padding: 0 0 45px;
-
-      h3 {
-        font-size: 22px;
-        line-height: 25px;
-        margin: 30px 0 15px;
-      }
-
-      .lead {
-        font-size: 17px;
-        line-height: 22px;
-      }
-
-      .contact-form {
-        margin-top: 40px;
-      }
-
-      .container {
-        .questions-wrapper {
-          padding: 0 20px 35px;
-        }
-      }
-    }
-
-    .facilities {
-      padding: 0 15px 55px;
-      background: url("landing_page/facilities.png") 30% 100% no-repeat;
-      background-size: auto 100%;
-      min-height: 310px;
-
-      h3 {
-        font-size: 22px;
-        line-height: 30px;
-        margin: 50px 0 25px;
-      }
-
-      .blue-link {
-        font-size: 15px;
-        margin-top: 20px;
-      }
-    }
-  }
-
-  .qa-button {
-    height: auto;
-    font-size: 13px;
-    padding-right: 40px;
-  }
-
-  .learn {
-    .learn-link {
-      margin-bottom: 25px;
-    }
-  }
-
-  .popular-services-box {
-    margin-bottom: 25px;
-  }
-
-  footer {
-    .footer-left {
-      .footer-row {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        row-gap: 30px;
-      }
-    }
-
-    .footer-right {
-      .row {
-        width: 100%;
-        text-align: center;
-        display: block;
       }
     }
   }
@@ -9006,6 +8754,326 @@ footer {
     &:hover {
       background: $palette-white;
       color: $eoscpl-01;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .eosc-common.top {
+    .container {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+  }
+
+  .eosc-common.white-label {
+    &.top {
+      padding: 10px 0 14px;
+    }
+
+    .left-links {
+      .header-logo-whitelabel {
+        width: 170px;
+        height: 32px;
+        background-size: contain;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .searchbar.whitelabel {
+    .searchbar__select {
+      width: 100px;
+    }
+  }
+  // scss-lint:disable all
+  .landing_page {
+    .landing-header {
+      padding: 35px 0;
+      background-size: cover;
+
+      h1 {
+        font-size: 20px;
+        line-height: 27px;
+        margin: 0 0 20px;
+      }
+
+      .searchbar {
+        max-width: 90%;
+        margin: auto;
+      }
+
+      .intro-text {
+        font-size: 13px;
+        line-height: 20px;
+        max-width: 97%;
+      }
+
+      .browse {
+        width: 95%;
+        margin: 25px auto 0;
+        text-align: center;
+        display: block !important;
+
+        .browse-label {
+          margin-bottom: 10px;
+        }
+
+        .solutions-box {
+          display: block;
+
+          a {
+            margin: 0 5px 15px;
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+    .research-activity {
+      padding: 50px 0;
+
+      h2 {
+        font-size: 25px;
+        line-height: 30px;
+      }
+
+      .activity {
+        width: 95%;
+        margin: 0 auto 25px;
+
+        .activity-texts {
+          .activity-title {
+            font-size: 15px;
+            line-height: 20px;
+            margin-bottom: 5px;
+          }
+
+          .activity-subtitle {
+            font-size: 13px;
+            line-height: 18px;
+          }
+        }
+
+        &:hover {
+          .activity-icon {
+            margin: 0 20px 0 0;
+          }
+        }
+      }
+
+      .activity-wrapper {
+        display: block;
+
+        .text-wrapper {
+          display: block;
+          padding-top: 10px;
+          width: 100%;
+          font-size: 16px;
+          text-align: center;
+          line-height: 28px;
+        }
+      }
+    }
+
+    .support {
+      padding: 0 0 50px;
+
+      h3 {
+        font-size: 25px;
+        line-height: 30px;
+        margin: 40px 0 25px;
+      }
+    }
+
+    .eosc-navy {
+      padding: 45px 15px;
+
+      .mb-5 {
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+      h4 {
+        font-size: 16px;
+        line-height: 22px;
+        margin: 0;
+        text-align: center;
+      }
+
+      .eosc-info-icon {
+        img {
+          width: 45px;
+        }
+      }
+    }
+
+    .provider {
+      padding: 45px 15px 60px;
+
+      h3 {
+        font-size: 20px;
+        line-height: 25px;
+        margin: 25px 0;
+      }
+
+      .communities {
+        margin-top: 100px;
+
+        .lead {
+          font-size: 18px;
+          line-height: 24px;
+          margin: 0 auto 40px;
+        }
+      }
+    }
+
+    .research {
+      padding: 40px 15px 50px;
+
+      h3 {
+        font-size: 25px;
+        line-height: 30px;
+      }
+
+      h4 {
+        font-size: 19px;
+        line-height: 23px;
+      }
+
+      .lead {
+        font-size: 16px;
+        line-height: 26px;
+      }
+
+      .carousel-box {
+        margin-bottom: 30px;
+        height: auto;
+        padding-bottom: 20px;
+      }
+    }
+
+    .questions {
+      padding: 0 0 45px;
+
+      h3 {
+        font-size: 22px;
+        line-height: 25px;
+        margin: 30px 0 15px;
+      }
+
+      .lead {
+        font-size: 17px;
+        line-height: 22px;
+      }
+
+      .contact-form {
+        margin-top: 40px;
+      }
+
+      .container {
+        .questions-wrapper {
+          padding: 0 20px 35px;
+        }
+      }
+    }
+
+    .facilities {
+      padding: 0 15px 55px;
+      background: url("landing_page/facilities.png") 30% 100% no-repeat;
+      background-size: auto 100%;
+      min-height: 310px;
+
+      h3 {
+        font-size: 22px;
+        line-height: 30px;
+        margin: 50px 0 25px;
+      }
+
+      .blue-link {
+        font-size: 15px;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .qa-button {
+    height: auto;
+    font-size: 13px;
+    padding-right: 40px;
+  }
+
+  .learn {
+    .learn-link {
+      margin-bottom: 25px;
+    }
+  }
+
+  .popular-services-box {
+    margin-bottom: 25px;
+  }
+
+  footer {
+    background: $eoscpl-01;
+
+    .footer-left {
+      .footer-row {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        row-gap: 30px;
+      }
+    }
+
+    .footer-right {
+      .row {
+        width: 100%;
+        text-align: center;
+        display: block;
+      }
+    }
+  }
+  // scss-lint:enable all
+  .eoscpl-intro {
+    margin: 15px 0;
+    padding: 15px;
+
+    .eoscpl-intro-desc {
+      font-size: 13px;
+    }
+  }
+
+  .open-science {
+    .openscience-intro {
+      display: flex;
+      padding: 24px;
+      margin-bottom: 36px;
+      border-radius: 32px;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      border: 2px solid $eoscpl-01;
+      align-content: space-between;
+
+      .openscience-container {
+        width: 100%;
+
+        .openscience-intro-desc {
+          font-size: 13px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  .programme h4 {
+    text-align: left;
+    line-height: 120%;
+  }
+
+  .popular-services-box {
+    .popular-title {
+      font-size: 18px;
     }
   }
 }
