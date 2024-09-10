@@ -7011,6 +7011,17 @@ abbr[title] {
         border-radius: 0 0 0 24px;
         border: none;
         border-right: 0;
+
+        &::placeholder {
+          color: $palette-black !important;
+          font-style: normal !important;
+          opacity: 1; /* Firefox */
+        }
+
+        &::-ms-input-placeholder {
+          /* Edge 12 -18 */
+          color: $palette-black !important;
+        }
       }
 
       button {
@@ -8148,7 +8159,7 @@ footer {
   margin: 12px auto 0;
 
   &.whitelabel {
-    margin: 12px 0 0;
+    margin: 8px 0 0;
   }
 
   .browse-label {
@@ -8200,7 +8211,7 @@ footer {
 
     input {
       border-radius: 8px 0 0 8px;
-      padding: 12px 25px 12px 10px;
+      padding: 12px 25px 12px 15px;
       border: 1px solid $landing-01;
       border-right: 0;
     }
