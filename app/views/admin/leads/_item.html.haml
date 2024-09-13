@@ -9,4 +9,4 @@
       class: "delete-icon btn-sm" do
       %i.far.fa-trash-alt{ id: "delete-lead-#{item.id}" }
 
-= render "leads/#{item.template}/card", card: item
+= render "leads/#{item.template}/card", card: item, card_counter: item_counter, card_length: card_length

@@ -41,90 +41,13 @@
 
 %section.partners
   .container
-    %h3 Dowiedz się więcej o naszych partnerach
-    .row
-      .col-md-4.col-sm-12
-        .partners-pic
-          = image_tag "eosc-pl-ncn.jpg", alt: "Service name", class: "img-fluid"
-        .partners-title Narodowe Centrum Nauki
-        .partners-desc
-          NCN wspiera polskich naukowców w realizacji projektów badawczych.
-          Finansuje nowatorskie projekty naukowe, oferując granty i wsparcie dla naukowców na różnych etapach kariery.
-          NCN regularnie współpracuje z międzynarodowymi instytucjami, umożliwiając polskim naukowcom udział
-          w globalnych inicjatywach ze świata nauki. Poznaj najnowsze informacje
-          o aktualnych konkursach oraz możliwościach uzyskania dofinansowania.
-        %a.partners-link{ href: "#" }
-          Sprawdź
-          %i.fa.fa-arrow-right
-
-      .col-md-4.col-sm-12
-        .partners-pic
-          = image_tag "eosc-pl-bey.jpg", alt: "Service name", class: "img-fluid"
-        .partners-title EOSC Beyond
-        .partners-desc
-          EOSC Beyond to projekt realizowany w ramach Europejskiej Chmury Otwartej Nauki,
-          mającej na celu budowanie sieci współpracy między badaczami z całej Europy.
-          Dzięki zaawansowanej infrastrukturze naukowcy zyskują dostęp do narzędzi,
-          które ułatwiają i usprawniają prowadzenie badań. Głównym celem EOSC Beyond jest
-          dostarczenie nowych funkcji platformy EOSC Core, które umożliwią dostawcom usług naukowych łatwiejszy dostęp,
-          integrację oraz udostępnianie zasobów badawczych.
-        %a.partners-link{ href: "#" }
-          Sprawdź
-          %i.fa.fa-arrow-right
-
-      .col-md-4.col-sm-12
-        .partners-pic
-          = image_tag "eosc-pl-assotiation.jpg", alt: "Service name", class: "img-fluid"
-        .partners-title EOSC Association
-        .partners-desc
-          EOSC Association łączy instytucje i organizacje zaangażowane w budowę otwartego ekosystemu naukowego
-          w Europie. Pracuje nad ułatwieniem dostępu do danych, narzędzi i usług badawczych,
-          wspierając współpracę pomiędzy krajami oraz instytucjami naukowymi.
-          Stowarzyszenie koordynuje także rozwój wspólnych standardów i infrastruktury,
-          aby zapewnić trwały i otwarty dostęp do zasobów naukowych dla wszystkich użytkowników.
-        %a.partners-link{ href: "#" }
-          Sprawdź
-          %i.fa.fa-arrow-right
+    = render_sections("use-cases")
 
 %section.open-science
   .container
-    %h3 Polska Platforma Otwartej Nauki
     .row
       .col-md-8.col-sm-12
-        .openscience-intro.top-intro
-          .openscience-container
-            .openscience-intro-title
-              Infrastruktura badawcza
-            .openscience-intro-desc
-              Odkryj serwisy zapewniające dostęp do zaawansowanej infrastruktury badawczej,
-              w tym usług chmurowych, mocy obliczeniowej i zasobów pamięci masowej.
-              Wszystko, czego potrzebujesz, aby wesprzeć swoje badania.
-          %a.openscience-more-link{ href: "#" }
-            Sprawdź
-            %i.fas.fa-arrow-right.ml-2
-
-        .openscience-intro.middle-intro
-          .openscience-container
-            .openscience-intro-title
-              Zbiory danych naukowych
-            .openscience-intro-desc
-              Zyskaj dostęp do szerokiej bazy datasetów, które wspomogą rozwój Twoich projektów badawczych.
-              Przeglądaj dane z różnych dziedzin, analizuj je i wykorzystuj w swojej pracy naukowej.
-          %a.openscience-more-link{ href: "#" }
-            Sprawdź
-            %i.fas.fa-arrow-right.ml-2
-
-        .openscience-intro.bottom-intro
-          .openscience-container
-            .openscience-intro-title
-              Publikacje naukowe
-            .openscience-intro-desc
-              Znajdź najnowsze artykuły, raporty i badania opublikowane przez polskich i międzynarodowych naukowców.
-              Platforma oferuje dostęp do katalogu publikacji z różnych dziedzin i obszarów badawczych.
-          %a.openscience-more-link{ href: "#" }
-            Sprawdź
-            %i.fas.fa-arrow-right.ml-2
-
+        = render_sections("learn-more")
       .col-md-4.col-sm-12
         = image_tag "eoscpl-pic-02.jpg", alt: "Service name", class: "img-fluid"
 

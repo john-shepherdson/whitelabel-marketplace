@@ -13,7 +13,7 @@
 .row
   = render partial: "item",
     collection: section.leads,
-    locals: { parent: section.slug }
+    locals: { parent: section.slug, card_length: section.leads.size }
   .col-12.col-lg-4.col-sm-6.my-auto
     = link_to new_admin_lead_path(section: section.slug),
       class: "btn btn-success" do
