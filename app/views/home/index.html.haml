@@ -5,8 +5,8 @@
         .col-lg-6.col-sm-12.pr-0
           %h1 Polska Platforma Otwartej Nauki
           %p.intro-text
-            Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji naukowych
-            oraz narzędzi do prowadzenia badań naukowych
+            Wspieramy rozwój polskiej nauki i innowacji, oferując nowoczesne narzędzia
+            oraz dostęp do unikalnych danych badawczych.
           = render "services/search",
           categories: @siblings || @root_categories,
           query_params: @query_params || {}
@@ -20,9 +20,10 @@
           .eoscpl-intro-title
             Zasoby Polskie
           .eoscpl-intro-desc
-            Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
-            prowadzenia badań naukowych. wobiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
-            prowadzenia badań naukowych. wiarygodnych informacji naukowych oraz narzędzi do
+            Znajdź treści i narzędzia dedykowane polskiej społeczności badawczej.
+            Wybieraj spośród tysięcy zasobów, które ułatwią Ci prowadzenie badań.
+            Korzystaj z bogatej oferty informacji oraz wsparcia, które pomogą Ci
+            w rozwoju innowacyjnych projektów w kraju i za granicą.
           %a.eoscpl-more-link{ href: "#" }
             Przeglądaj zasoby Polskie
             %i.fas.fa-arrow-right.ml-2
@@ -31,11 +32,11 @@
           .eoscpl-intro-title
             Zasoby Unii Europejskiej
           .eoscpl-intro-desc
-            Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
-            prowadzenia badań naukowych. wobiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
-            prowadzenia badań naukowych. wiarygodnych informacji naukowych oraz narzędzi do
+            Przeglądaj jedną z największych baz danych naukowych w Europie. Dostęp do milionów publikacji,
+            serwisów, oprogramowania i innych narzędzi, które wspierają międzynarodową współpracę
+            i rozwój Twoich projektów badawczych.
           %a.eoscpl-more-link{ href: "#" }
-            Przeglądaj zasoby UE
+            Przeglądaj zasoby europejskie
             %i.fas.fa-arrow-right.ml-2
 
 %section.partners
@@ -44,39 +45,43 @@
     .row
       .col-md-4.col-sm-12
         .partners-pic
-          = image_tag "eoscpl-news-01.jpg", alt: "Service name", class: "img-fluid"
-        .partners-title Aktualności
+          = image_tag "eosc-pl-ncn.jpg", alt: "Service name", class: "img-fluid"
+        .partners-title Narodowe Centrum Nauki
         .partners-desc
-          Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
-          prowadzenia badań naukowych. Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji
-          naukowych oraz narzędzi do prowadzenia badań naukowych. Uzyskaj dostęp do milionów obiektów badawczych,
-          wiarygodnych informacji naukowych oraz narzędzi do prowadzenia badań
+          NCN wspiera polskich naukowców w realizacji projektów badawczych.
+          Finansuje nowatorskie projekty naukowe, oferując granty i wsparcie dla naukowców na różnych etapach kariery.
+          NCN regularnie współpracuje z międzynarodowymi instytucjami, umożliwiając polskim naukowcom udział
+          w globalnych inicjatywach ze świata nauki. Poznaj najnowsze informacje
+          o aktualnych konkursach oraz możliwościach uzyskania dofinansowania.
         %a.partners-link{ href: "#" }
           Sprawdź
           %i.fa.fa-arrow-right
 
       .col-md-4.col-sm-12
         .partners-pic
-          = image_tag "eoscpl-news-02.jpg", alt: "Service name", class: "img-fluid"
-        .partners-title Aktualności
+          = image_tag "eosc-pl-bey.jpg", alt: "Service name", class: "img-fluid"
+        .partners-title EOSC Beyond
         .partners-desc
-          Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
-          prowadzenia badań naukowych. Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji
-          naukowych oraz narzędzi do prowadzenia badań naukowych. Uzyskaj dostęp do milionów obiektów badawczych,
-          wiarygodnych informacji naukowych oraz narzędzi do prowadzenia badań
+          EOSC Beyond to projekt realizowany w ramach Europejskiej Chmury Otwartej Nauki,
+          mającej na celu budowanie sieci współpracy między badaczami z całej Europy.
+          Dzięki zaawansowanej infrastrukturze naukowcy zyskują dostęp do narzędzi,
+          które ułatwiają i usprawniają prowadzenie badań. Głównym celem EOSC Beyond jest
+          dostarczenie nowych funkcji platformy EOSC Core, które umożliwią dostawcom usług naukowych łatwiejszy dostęp,
+          integrację oraz udostępnianie zasobów badawczych.
         %a.partners-link{ href: "#" }
           Sprawdź
           %i.fa.fa-arrow-right
 
       .col-md-4.col-sm-12
         .partners-pic
-          = image_tag "eoscpl-news-03.jpg", alt: "Service name", class: "img-fluid"
-        .partners-title Aktualności
+          = image_tag "eosc-pl-assotiation.jpg", alt: "Service name", class: "img-fluid"
+        .partners-title EOSC Association
         .partners-desc
-          Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
-          prowadzenia badań naukowych. Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji
-          naukowych oraz narzędzi do prowadzenia badań naukowych. Uzyskaj dostęp do milionów obiektów badawczych,
-          wiarygodnych informacji naukowych oraz narzędzi do prowadzenia badań
+          EOSC Association łączy instytucje i organizacje zaangażowane w budowę otwartego ekosystemu naukowego
+          w Europie. Pracuje nad ułatwieniem dostępu do danych, narzędzi i usług badawczych,
+          wspierając współpracę pomiędzy krajami oraz instytucjami naukowymi.
+          Stowarzyszenie koordynuje także rozwój wspólnych standardów i infrastruktury,
+          aby zapewnić trwały i otwarty dostęp do zasobów naukowych dla wszystkich użytkowników.
         %a.partners-link{ href: "#" }
           Sprawdź
           %i.fa.fa-arrow-right
@@ -89,9 +94,11 @@
         .openscience-intro.top-intro
           .openscience-container
             .openscience-intro-title
-              Polskie zasoby
+              Infrastruktura badawcza
             .openscience-intro-desc
-              Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
+              Odkryj serwisy zapewniające dostęp do zaawansowanej infrastruktury badawczej,
+              w tym usług chmurowych, mocy obliczeniowej i zasobów pamięci masowej.
+              Wszystko, czego potrzebujesz, aby wesprzeć swoje badania.
           %a.openscience-more-link{ href: "#" }
             Sprawdź
             %i.fas.fa-arrow-right.ml-2
@@ -99,9 +106,10 @@
         .openscience-intro.middle-intro
           .openscience-container
             .openscience-intro-title
-              Polskie zasoby
+              Zbiory danych naukowych
             .openscience-intro-desc
-              Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
+              Zyskaj dostęp do szerokiej bazy datasetów, które wspomogą rozwój Twoich projektów badawczych.
+              Przeglądaj dane z różnych dziedzin, analizuj je i wykorzystuj w swojej pracy naukowej.
           %a.openscience-more-link{ href: "#" }
             Sprawdź
             %i.fas.fa-arrow-right.ml-2
@@ -109,9 +117,10 @@
         .openscience-intro.bottom-intro
           .openscience-container
             .openscience-intro-title
-              Polskie zasoby
+              Publikacje naukowe
             .openscience-intro-desc
-              Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
+              Znajdź najnowsze artykuły, raporty i badania opublikowane przez polskich i międzynarodowych naukowców.
+              Platforma oferuje dostęp do katalogu publikacji z różnych dziedzin i obszarów badawczych.
           %a.openscience-more-link{ href: "#" }
             Sprawdź
             %i.fas.fa-arrow-right.ml-2
@@ -124,16 +133,15 @@
     .row
       .col-md-3.col-sm-12
         %h4
-          EOSC
-          %br
-          National Polish Programme
+          Polski Węzeł EOSC
       .col-md-6.col-sm-12
         %p
-          Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do
-          prowadzenia badań naukowych. Uzyskaj dostęp do milionów obiektów badawczych, wiarygodnych informacji
-          naukowych oraz narzędzi do prowadzenia badań naukowych. Uzyskaj dostęp do milionów obiektów badawczych,
-          wiarygodnych informacji naukowych oraz narzędzi do prowadzenia badań naukowych. Uzyskaj dostęp do milionów
-          obiektów badawczych, wiarygodnych informacji naukowych oraz narzędzi do prowadzenia badań naukowych.
+          Polska Platforma Otwartej Nauki jest częścią europejskiej inicjatywy European Open Science Cloud,
+          której celem jest rozwój otwartych i dostępnych zasobów badawczych na skalę europejską.
+          Jako jeden z krajowych węzłów, Polska wspiera naukowców w dostępie do danych,
+          publikacji oraz infrastruktury, która umożliwia prowadzenie zaawansowanych badań i współpracę międzynarodową.
+          Krajowe, regionalne i temetyczne węzły EOSC, w tym PPON, stanowią punkty dostępu do Federacji EOSC,
+          oferującej własne i zewnętrzne usługi, w tym zarządzanie danymi oraz ich udostępnianie.
       .col-md-3.col-sm-12.d-flex
         %a.programme-link{ href: "#" }
           Przeglądaj wszystkie zasoby

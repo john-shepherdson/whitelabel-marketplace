@@ -17,7 +17,7 @@
   .searchbar__input
     %label.sr-only{ for: "search" }= _("Search")
     = text_field_tag :q, params[:q],  class: "autocomplete-input",
-                                     placeholder: "Znajdź serwis...",
+                                     placeholder: "Odkryj nasz katalog",
                                      data: { autocomplete_target: "input",
                                              external_target: "query",
                                              toggle: "dropdown",
@@ -50,6 +50,5 @@
   .browse-label
     Popularne frazy:
   .popular-box
-    %a{ href: "#" } nanotechnology
-    %a{ href: "#" } cloud computing
-    %a{ href: "#" } storage
+    - ["nanotechnologie", "zasoby obliczeniowe", "pamięć masowa"].each do |phrase|
+      = link_to phrase, services_path(q: phrase)
