@@ -1,12 +1,13 @@
-.col-12.col-sm-12.col-md-12.col-lg-6
+.col-md-4.col-sm-12
   = yield :item_bar if content_for(:item_bar)
-  .simple-intro
-    .icon
-      - if card.picture.attached? && card.picture.variable?
-        = image_tag card.picture.variant(resize: "86x111")
-      - else
-        = image_tag "learn-more-box-default.png"
-    = link_to card.header.truncate(60), card.url, "data-toggle": "tooltip",
-        title: (card.header.size > 60 ? card.header : nil), class: "title"
-    .description{ "data-toggle": "tooltip", title: (card.body.size > 140 ? card.body : nil) }
-      = card.body.truncate(140)
+  .partners-pic
+    - if card.picture.attached? && card.picture.variable?
+      = image_tag card.picture, alt: card.header, class: "img-fluid"
+    - else
+      = image_tag "learn-more-box-default.png"
+  .partners-title= card.header
+  .partners-desc{ "data-toggle": "tooltip", title: (card.body.size > 500 ? card.body : nil) }
+    = card.body.truncate(500)
+  %a.partners-link{ href: card.url, target: "_blank" }
+    Sprawdź
+    %i.fa.fa-arrow-right

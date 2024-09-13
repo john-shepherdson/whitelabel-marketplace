@@ -3,4 +3,4 @@
   .row
     = render partial: "leads/#{section.template}/card",
       collection: section.leads,
-      locals: { parent: section.slug }
+      locals: { parent: section.slug, card_length: section.leads.size }
