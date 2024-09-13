@@ -33,6 +33,9 @@ Please view this file on the master branch, on stable branches it's out of date.
 - Back to previous button fixed (@maria-j-k)
 - Removed `no_offers` message in deleted services (@goreck888)
 
+### Security
+- Update dependencies (@goreck888)
+
 
 ## [3.57.0]
 
