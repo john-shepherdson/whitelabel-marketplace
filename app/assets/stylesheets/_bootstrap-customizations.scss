@@ -191,7 +191,7 @@ a {
 .btn-secondary {
   @include button-variant($btn-secondary, $white, $btn-secondary-hover, $white, $btn-secondary-hover, $white);
   color: $palette-blue;
-  border-radius: 8px;
+  border-radius: 32px;
   font-size: 0.86rem;
 
   &:hover {
@@ -221,10 +221,15 @@ a {
 }
 
 .eosc-back-search-bar {
-  background: none !important;
+  background: url("eoscpl-topmap.jpg") no-repeat 50% 0 !important;
+  background-size: 100% auto !important;
+  height: auto !important;
+  padding: 37px 0 32px;
 }
 
 .eosc-back-link {
+  margin-top: 0 !important;
+
   .chevron-left {
     background-image: url("ico_back.svg") !important;
     background-size: 10px auto;
@@ -471,7 +476,7 @@ textarea:-ms-input-placeholder {
 
   .nav-link {
     color: $palette-gray-100;
-    padding: 0.6rem 1.28rem;
+    padding: 8px 24px;
     font-weight: $font-weight-bold;
     border-radius: 0;
 
@@ -482,10 +487,10 @@ textarea:-ms-input-placeholder {
 
     &.active {
       border-color: $palette-solid-5 $palette-solid-5 $white;
-      padding: 0.8rem 1.28rem;
+      padding: 8px 24px;
       margin-top: -3px;
       margin-bottom: -6px;
-      border-bottom: 3px solid $white;
+      border-bottom: 4px solid $white;
 
       &:hover {
         opacity: 1;
@@ -2825,7 +2830,7 @@ label[data-multicheckbox].small {
         margin-bottom: 0;
         font-weight: 500;
         color: $palette-blue;
-        border-bottom: 1px solid $palette-blue;
+        border-bottom: 4px solid $palette-blue;
       }
 
       &:focus {
@@ -3155,11 +3160,11 @@ label[data-multicheckbox].small {
 .provider-panel {
   padding: 25px;
   display: flex;
-  border-radius: 8px;
+  border-radius: 0 20px 20px;
   flex-direction: column;
   align-items: flex-start;
   gap: 25px;
-  background: $custom-10;
+  background: $alert-bg;
 
   .provider-head {
     display: flex;
@@ -3581,7 +3586,7 @@ label[data-multicheckbox].small {
 
     dd {
       a {
-        font-weight: $font-weight-normal;
+        font-weight: 400;
       }
     }
   }
