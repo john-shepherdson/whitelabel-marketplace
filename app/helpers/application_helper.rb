@@ -90,8 +90,8 @@ module ApplicationHelper
       query = ""
       if include_query
         category = request.query_parameters["return_path"] || "search/all"
-        search_params = CGI.unescape(request.query_parameters["search_params"] || "")
-        query = "/#{category}?#{search_params}"
+        search_params = CGI.unescape(request.query_parameters["search_params"] || "q=*")
+        query = "/#{category}?#{search_params}&scope=pl"
       end
 
       Rails.configuration.search_service_base_url + query

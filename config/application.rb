@@ -85,7 +85,7 @@ module Mp
     config.profile_4_enabled = ActiveModel::Type::Boolean.new.cast(ENV.fetch("PROFILE_4_ENABLED", false))
     config.home_page_external_links_enabled = ActiveModel::Type::Boolean.new.cast(
       ENV.fetch("HOME_PAGE_EXTERNAL_LINKS_ENABLED", false))
-    config.search_service_base_url = ENV.fetch("SEARCH_SERVICE_BASE_URL", "https://search.marketplace.eosc-portal.eu")
+    config.search_service_base_url = ENV.fetch("SEARCH_SERVICE_BASE_URL", "https://eosc.pl")
     config.search_service_research_product_endpoint = ENV.fetch("SEARCH_SERVICE_RESEARCH_PRODUCT_ENDPOINT",
                                                                 "/api/web/research-product/")
     config.user_dashboard_url = ENV.fetch("USER_DASHBOARD_URL",
@@ -96,7 +96,7 @@ module Mp
     config.mp_stomp_publisher_enabled = ActiveModel::Type::Boolean.new.cast(
       ENV.fetch("MP_STOMP_PUBLISHER_ENABLED", Rails.env.test?))
 
-    config.enable_external_search = ActiveModel::Type::Boolean.new.cast(ENV.fetch("MP_ENABLE_EXTERNAL_SEARCH", false))
+    config.enable_external_search = ActiveModel::Type::Boolean.new.cast(ENV.fetch("MP_ENABLE_EXTERNAL_SEARCH", true))
 
     config.whitelabel = ActiveModel::Type::Boolean.new.cast(ENV.fetch("MP_WHITELABEL", true))
   end
