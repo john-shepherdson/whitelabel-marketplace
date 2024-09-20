@@ -99,5 +99,6 @@ module Mp
     config.enable_external_search = ActiveModel::Type::Boolean.new.cast(ENV.fetch("MP_ENABLE_EXTERNAL_SEARCH", false))
 
     config.whitelabel = ActiveModel::Type::Boolean.new.cast(ENV.fetch("MP_WHITELABEL", true))
+    config.enable_commons = ActiveModel::Type::Boolean.new.cast(ENV.fetch("ENABLE_COMMONS", true))
   end
 end
