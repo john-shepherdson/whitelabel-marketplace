@@ -54,6 +54,21 @@ module ApplicationHelper
     render "layouts/placeholder", text: text, link: link, variant: variant
   end
 
+  def enable_commons
+    Mp::Application.config.enable_commons
+  end
+
+  def footer_params
+    if external_search_enabled
+      {
+        "terms-of-use": "#{external_search_url}/acceptable-use-policy",
+        "privacy-policy": "#{external_search_url}/privacy-policy"
+      }
+    else
+      {}
+    end
+  end
+
   def eosc_commons_profile_links
     links = []
 
@@ -101,5 +116,15 @@ module ApplicationHelper
 
   def render_turbo_stream_flash
     turbo_stream.prepend "flash-messages", partial: "layouts/flash"
+  end
+
+  def lead_class(card_counter, card_length)
+    if card_counter.zero?
+      "top"
+    elsif card_counter < (card_length - 1)
+      "middle"
+    else
+      "bottom"
+    end
   end
 end

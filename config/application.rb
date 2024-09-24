@@ -56,7 +56,7 @@ module Mp
     #   - javascript     // custom scss files (see `config/webpack/environment.js`)
     #   - config/locales // custom locales
 
-    config.is_recommendation_panel = ActiveModel::Type::Boolean.new.cast(ENV.fetch("SHOW_RECOMMENDATION_PANEL", true))
+    config.is_recommendation_panel = ActiveModel::Type::Boolean.new.cast(ENV.fetch("SHOW_RECOMMENDATION_PANEL", false))
     if ENV["CUSTOMIZATION_PATH"].present?
       config.paths["app/views"].unshift(File.join(ENV["CUSTOMIZATION_PATH"], "views"))
       config.i18n.load_path +=
@@ -99,5 +99,6 @@ module Mp
     config.enable_external_search = ActiveModel::Type::Boolean.new.cast(ENV.fetch("MP_ENABLE_EXTERNAL_SEARCH", false))
 
     config.whitelabel = ActiveModel::Type::Boolean.new.cast(ENV.fetch("MP_WHITELABEL", true))
+    config.enable_commons = ActiveModel::Type::Boolean.new.cast(ENV.fetch("ENABLE_COMMONS", true))
   end
 end

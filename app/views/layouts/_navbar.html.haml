@@ -1,11 +1,12 @@
 = render "layouts/sections"
 
-- if external_search_url || request.fullpath.include?("backoffice")
-  .container.eosc-back-search-bar
-    .eosc-back-link
-      .chevron-left
-      %a{ href: external_search_url(include_query: true) }
-        Go to Search
+- if external_search_url || request.fullpath.include?("backoffice") || service.present?
+  .eosc-back-search-bar
+    .container
+      .eosc-back-link
+        .chevron-left
+        %a{ href: external_search_url(include_query: true) }
+          Go back to resource discovery service
 - else
   .whitelabel-header-container
     %section.header

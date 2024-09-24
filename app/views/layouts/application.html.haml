@@ -18,7 +18,7 @@
     = render "layouts/welcome_modal"
     = turbo_frame_tag "modal"
     %header
-      = render "layouts/navbar",
+      = render "layouts/navbar", service: @service,
         categories: @siblings || @root_categories,
         query_params: @query_params || {}
     %main

@@ -41,11 +41,12 @@ header {
   z-index: 10;
 
   .whitelabel-header-container {
-    background: var(--Linear, linear-gradient(180deg, $palette-white 2.04%, $alert-bg 97.59%));
-    padding: 10px 15px 50px;
+    background: url("eoscpl-topmap.jpg") no-repeat 50% 0;
+    background-size: 100% auto;
+    padding: 30px 0 20px;
 
     a {
-      color: $custom-16;
+      color: $palette-white;
     }
   }
 
@@ -163,7 +164,7 @@ a {
 }
 
 .btn {
-  border-radius: 8px;
+  border-radius: 32px;
 
   svg {
     margin-right: 9px;
@@ -176,7 +177,7 @@ a {
 .btn-primary {
   @include button-variant($btn-primary-hover, $white, $btn-primary-hover, $white, $btn-primary-hover, $white);
   background-color: $btn-primary-gradient-end;
-  border-radius: 8px;
+  border-radius: 32px;
   padding: 0.5rem 2rem;
 
   @include hover-focus-active {
@@ -191,7 +192,7 @@ a {
 .btn-secondary {
   @include button-variant($btn-secondary, $white, $btn-secondary-hover, $white, $btn-secondary-hover, $white);
   color: $palette-blue;
-  border-radius: 8px;
+  border-radius: 32px;
   font-size: 0.86rem;
 
   &:hover {
@@ -221,10 +222,15 @@ a {
 }
 
 .eosc-back-search-bar {
-  background: none !important;
+  background: url("eoscpl-topmap.jpg") no-repeat 50% 0 !important;
+  background-size: 100% auto !important;
+  height: auto !important;
+  padding: 37px 0 32px !important;
 }
 
 .eosc-back-link {
+  margin-top: 0 !important;
+
   .chevron-left {
     background-image: url("ico_back.svg") !important;
     background-size: 10px auto;
@@ -471,7 +477,7 @@ textarea:-ms-input-placeholder {
 
   .nav-link {
     color: $palette-gray-100;
-    padding: 0.6rem 1.28rem;
+    padding: 8px 24px;
     font-weight: $font-weight-bold;
     border-radius: 0;
 
@@ -482,10 +488,10 @@ textarea:-ms-input-placeholder {
 
     &.active {
       border-color: $palette-solid-5 $palette-solid-5 $white;
-      padding: 0.8rem 1.28rem;
+      padding: 8px 24px;
       margin-top: -3px;
       margin-bottom: -6px;
-      border-bottom: 3px solid $white;
+      border-bottom: 4px solid $white;
 
       &:hover {
         opacity: 1;
@@ -1627,6 +1633,10 @@ Service detail
 
       table {
         margin-bottom: 8px;
+      }
+
+      .card-title {
+        max-width: 75%;
       }
     }
   }
@@ -2786,13 +2796,14 @@ label[data-multicheckbox].small {
   .resource-row {
     margin: 5px 0 10px 0;
     display: flex;
-    font-weight: 500;
+    font-weight: 400;
     column-gap: 8px;
     row-gap: 8px;
 
     .resource-type {
-      padding: 6px 12px 6px 12px;
-      line-height: 1.2;
+      padding: 5px 12px 5px 12px;
+      line-height: 1.1;
+      font-size: 12px;
       background: $alert-bg;
       color: $palette-blue;
     }
@@ -2824,7 +2835,7 @@ label[data-multicheckbox].small {
         margin-bottom: 0;
         font-weight: 500;
         color: $palette-blue;
-        border-bottom: 1px solid $palette-blue;
+        border-bottom: 4px solid $palette-blue;
       }
 
       &:focus {
@@ -3154,11 +3165,11 @@ label[data-multicheckbox].small {
 .provider-panel {
   padding: 25px;
   display: flex;
-  border-radius: 8px;
+  border-radius: 0 20px 20px;
   flex-direction: column;
   align-items: flex-start;
   gap: 25px;
-  background: $custom-10;
+  background: $alert-bg;
 
   .provider-head {
     display: flex;
@@ -3580,7 +3591,7 @@ label[data-multicheckbox].small {
 
     dd {
       a {
-        font-weight: $font-weight-normal;
+        font-weight: 400;
       }
     }
   }
@@ -6976,28 +6987,28 @@ abbr[title] {
   }
 
   .landing-header {
-    background: var(--Linear, linear-gradient(180deg, #fff 0%, #edf4ff 100%));
-    padding: 90px 0 110px;
+    background: url("eoscpl-topmap.jpg") no-repeat 50% 0;
+    background-size: 100% auto;
+    padding: 95px 0 90px;
 
     .logo-box {
       margin-bottom: 30px;
     }
 
     h1 {
-      color: $palette-black;
+      color: $palette-white;
       font-weight: 500;
-      font-size: 30px;
-      line-height: 39px;
-      margin: 0 0 25px;
+      font-size: 24px;
+      line-height: 1.3;
+      margin: 0 0 15px;
     }
 
-    p {
-      color: $landing-01;
-      font-weight: 400;
+    .intro-text {
+      color: $palette-white;
+      font-weight: 300;
       font-size: 16px;
-      line-height: 20px;
-      max-width: 520px;
-      margin: 0 auto 48px;
+      line-height: 140%;
+      margin: 0 0 25px;
     }
 
     .searchbar {
@@ -7008,15 +7019,25 @@ abbr[title] {
       }
 
       input {
-        border-radius: 8px 0 0 8px;
-        border: 1px solid $landing-01;
+        border-radius: 0 0 0 24px;
+        border: none;
         border-right: 0;
+
+        &::placeholder {
+          color: $palette-black !important;
+          font-style: normal !important;
+          opacity: 1; /* Firefox */
+        }
+
+        &::-ms-input-placeholder {
+          /* Edge 12 -18 */
+          color: $palette-black !important;
+        }
       }
 
       button {
-        border-radius: 0 8px 8px 0;
-        border: 1px solid $landing-01;
-        border-left: 0;
+        border-radius: 0 24px 24px 0;
+        border: none;
 
         svg {
           font-size: 20px;
@@ -7026,7 +7047,7 @@ abbr[title] {
   }
 
   .research-activity {
-    padding: 75px 0 75px;
+    padding: 72px 0;
 
     h2 {
       font-weight: 600;
@@ -7218,11 +7239,14 @@ abbr[title] {
     padding: 75px 0;
 
     h3 {
-      font-size: 24px;
-      line-height: 140%;
-      font-weight: 400;
-      margin: 0 0 25px;
-      color: $landing-02;
+      color: $eoscpl-01;
+      font-family: "Quicksand";
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 140%; /* 44.8px */
+      letter-spacing: 0.64px;
+      margin: 0 0 30px;
+      padding: 0;
     }
 
     .lead {
@@ -7794,12 +7818,16 @@ abbr[title] {
   column-gap: 8px;
 
   a {
+    color: $palette-white;
+    text-decoration: underline;
+
     &:hover {
+      opacity: 0.7;
       text-decoration: underline;
     }
 
     &:focus {
-      border: 1px solid $custom-12;
+      border: 1px solid $palette-white;
       text-decoration: none;
     }
   }
@@ -7807,6 +7835,10 @@ abbr[title] {
 
 .eosc-common {
   &.white-label {
+    &.top {
+      padding: 28px 0 24px;
+    }
+
     .container {
       padding-left: 45px !important;
       padding-right: 45px !important;
@@ -7826,9 +7858,9 @@ abbr[title] {
 
     .left-links {
       .header-logo-whitelabel {
-        width: 160px;
-        height: 57px;
-        background: url("white-label-logo.png") center no-repeat;
+        width: 251px;
+        height: 44px;
+        background: url("eoscpl-logo.svg") center no-repeat;
         display: block;
       }
     }
@@ -7939,12 +7971,12 @@ abbr[title] {
 }
 
 .popular-services-box {
-  border-radius: 8px;
-  border: 1px solid $custom-17;
+  border-radius: 32px 0 32px 32px;
+  border: 2px solid $eoscpl-02;
   padding: 24px;
 
   &:hover {
-    border: 1px solid $landing-01;
+    border: 2px solid $eoscpl-01;
   }
 
   .popular-top {
@@ -7961,34 +7993,36 @@ abbr[title] {
   }
 
   .popular-title {
-    color: $landing-02;
+    color: $eoscpl-03;
+    font-family: "Quicksand";
     font-size: 24px;
-    font-weight: 400;
-    line-height: 140%;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0.48px;
   }
 
   .popular-provider {
     color: $landing-01;
     font-size: 14px;
-    font-weight: 400;
-    line-height: 150%;
+    font-weight: 300;
+    line-height: 130%;
     padding-bottom: 15px;
-    margin: 10px 0 15px;
-    border-bottom: 1px solid $choices-disabled-background-color;
+    margin: 15px 0 16px;
+    border-bottom: 2px solid $eoscpl-04;
   }
 
   .popular-description {
     color: $landing-01;
     font-size: 14px;
-    font-weight: 400;
-    line-height: 150%;
+    font-weight: 300;
+    line-height: 140%;
     padding-bottom: 15px;
     margin: 0 0 17px;
     flex-grow: 1;
   }
   // scss-lint:disable all
   .taglist-holder {
-    border-top: 1px solid $choices-disabled-background-color;
+    border-top: 2px solid $eoscpl-04;
     padding-top: 15px;
     display: flex;
     flex-wrap: wrap;
@@ -8011,7 +8045,7 @@ abbr[title] {
 }
 
 .totop-wrapper {
-  background: $alert-bg;
+  background: $eoscpl-05;
   padding: 12px 0;
 
   a {
@@ -8024,10 +8058,15 @@ abbr[title] {
 }
 
 footer {
-  background: $landing-02;
+  background: $eoscpl-01 url("eoscpl-footer-bg.svg") no-repeat;
+  background-position: right 0;
+
+  .footer-logo {
+    margin-top: 70px;
+  }
 
   .footer-left {
-    padding: 48px 65px 18px 15px;
+    padding: 70px 65px 18px 15px;
     color: $palette-white;
 
     .footer-row {
@@ -8047,7 +8086,11 @@ footer {
           color: $palette-white;
 
           .menu-title {
-            font-weight: 600;
+            font-family: "Quicksand";
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 140%; /* 33.6px */
+            letter-spacing: 0.48px;
             margin-bottom: 21px;
           }
 
@@ -8121,274 +8164,13 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
-  .eosc-common.top {
-    .container {
-      padding-left: 10px !important;
-      padding-right: 10px !important;
-    }
-  }
-
-  .eosc-common.white-label {
-    .left-links {
-      .header-logo-whitelabel {
-        width: 100px;
-        height: 32px;
-        background-size: contain;
-        margin-top: 5px;
-      }
-    }
-  }
-
-  .landing_page {
-    .landing-header {
-      padding: 35px 0;
-
-      h1 {
-        font-size: 20px;
-        line-height: 27px;
-        margin: 0 0 20px;
-      }
-
-      p {
-        font-size: 14px;
-        line-height: 20px;
-        max-width: 90%;
-        margin: 0 auto 30px;
-      }
-
-      .browse {
-        width: 95%;
-        margin: 25px auto 0;
-        text-align: center;
-        display: block !important;
-
-        .browse-label {
-          text-align: center;
-          margin-bottom: 10px;
-        }
-
-        .solutions-box {
-          display: block;
-
-          a {
-            margin: 0 5px 15px;
-            display: inline-block;
-          }
-        }
-      }
-    }
-
-    .research-activity {
-      padding: 50px 0;
-
-      h2 {
-        font-size: 25px;
-        line-height: 30px;
-      }
-
-      .activity {
-        width: 95%;
-        margin: 0 auto 25px;
-
-        .activity-texts {
-          .activity-title {
-            font-size: 15px;
-            line-height: 20px;
-            margin-bottom: 5px;
-          }
-
-          .activity-subtitle {
-            font-size: 13px;
-            line-height: 18px;
-          }
-        }
-
-        &:hover {
-          .activity-icon {
-            margin: 0 20px 0 0;
-          }
-        }
-      }
-
-      .activity-wrapper {
-        display: block;
-
-        .text-wrapper {
-          display: block;
-          padding-top: 10px;
-          width: 100%;
-          font-size: 16px;
-          text-align: center;
-          line-height: 28px;
-        }
-      }
-    }
-
-    .support {
-      padding: 0 0 50px;
-
-      h3 {
-        font-size: 25px;
-        line-height: 30px;
-        margin: 40px 0 25px;
-      }
-    }
-
-    .eosc-navy {
-      padding: 45px 15px 45px;
-
-      .mb-5 {
-        text-align: center;
-        margin-bottom: 15px;
-      }
-
-      h4 {
-        font-size: 16px;
-        line-height: 22px;
-        margin: 0;
-        text-align: center;
-      }
-
-      .eosc-info-icon {
-        img {
-          width: 45px;
-        }
-      }
-    }
-
-    .provider {
-      padding: 45px 15px 60px;
-
-      h3 {
-        font-size: 20px;
-        line-height: 25px;
-        margin: 25px 0;
-      }
-
-      .communities {
-        margin-top: 100px;
-
-        .lead {
-          font-size: 18px;
-          line-height: 24px;
-          margin: 0 auto 40px;
-        }
-      }
-    }
-
-    .research {
-      padding: 40px 15px 50px;
-
-      h3 {
-        font-size: 25px;
-        line-height: 30px;
-      }
-
-      h4 {
-        font-size: 19px;
-        line-height: 23px;
-      }
-
-      .lead {
-        font-size: 16px;
-        line-height: 26px;
-      }
-
-      .carousel-box {
-        margin-bottom: 30px;
-        height: auto;
-        padding-bottom: 20px;
-      }
-    }
-
-    .questions {
-      padding: 0 0 45px;
-
-      h3 {
-        font-size: 22px;
-        line-height: 25px;
-        margin: 30px 0 15px;
-      }
-
-      .lead {
-        font-size: 17px;
-        line-height: 22px;
-      }
-
-      .contact-form {
-        margin-top: 40px;
-      }
-
-      .container {
-        .questions-wrapper {
-          padding: 0 20px 35px;
-        }
-      }
-    }
-
-    .facilities {
-      padding: 0 15px 55px;
-      background: url("landing_page/facilities.png") 30% 100% no-repeat;
-      background-size: auto 100%;
-      min-height: 310px;
-
-      h3 {
-        font-size: 22px;
-        line-height: 30px;
-        margin: 50px 0 25px;
-      }
-
-      .blue-link {
-        font-size: 15px;
-        margin-top: 20px;
-      }
-    }
-  }
-
-  .qa-button {
-    height: auto;
-    font-size: 13px;
-    padding-right: 40px;
-  }
-
-  .learn {
-    .learn-link {
-      margin-bottom: 25px;
-    }
-  }
-
-  .popular-services-box {
-    margin-bottom: 25px;
-  }
-
-  footer {
-    .footer-left {
-      .footer-row {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        row-gap: 30px;
-      }
-    }
-
-    .footer-right {
-      .row {
-        width: 100%;
-        text-align: center;
-        display: block;
-      }
-    }
-  }
-}
-
 .browse {
   width: 637px;
-  color: $landing-01;
+  color: $palette-white;
   margin: 12px auto 0;
 
   &.whitelabel {
-    margin: 12px 0 0;
+    margin: 8px 0 0;
   }
 
   .browse-label {
@@ -8434,20 +8216,18 @@ footer {
     }
 
     .searchbar__select {
-      border-top: 1px solid $landing-01;
-      border-bottom: 1px solid $landing-01;
+      border: none;
+      width: 220px;
     }
 
     input {
       border-radius: 8px 0 0 8px;
-      padding: 12px 25px 12px 10px;
-      border: 1px solid $landing-01;
+      padding: 12px 25px 12px 15px;
       border-right: 0;
     }
 
     button {
       border-radius: 0 8px 8px 0;
-      border: 1px solid $landing-01;
       border-left: 0;
 
       svg {
@@ -8766,4 +8546,554 @@ footer {
 .backoffice-back-link {
   display: block;
   margin-top: 25px;
+}
+
+.eoscpl-intro {
+  display: inline-block;
+  padding: 24px;
+  margin-bottom: 30px;
+  border-radius: 0 32px 32px;
+  border: 2px solid $eoscpl-01;
+
+  .eoscpl-intro-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: $eoscpl-01;
+    line-height: 140%;
+    margin-bottom: 12px;
+  }
+
+  .eoscpl-intro-desc {
+    color: $eoscpl-03;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 140%;
+    margin-bottom: 30px;
+  }
+
+  .eoscpl-more-link {
+    display: flex;
+    padding: 8px 20px;
+    justify-content: space-between;
+    font-weight: 400;
+    align-items: center;
+    color: $palette-white;
+    border-radius: 32px;
+    background: $eoscpl-01;
+    float: right;
+  }
+
+  &:hover {
+    border: 2px solid $eoscpl-02;
+
+    .eoscpl-intro-title {
+      color: $eoscpl-02;
+    }
+
+    .eoscpl-more-link {
+      background: $eoscpl-02;
+    }
+  }
+}
+
+.partners {
+  padding: 72px 0;
+  background: $eoscpl-01;
+  color: $palette-white;
+
+  h3 {
+    font-family: "Quicksand";
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: 0.64px;
+    color: $palette-white;
+    margin-bottom: 30px;
+  }
+
+  .partners-title {
+    padding: 4px 15px;
+    color: $palette-white;
+    font-family: "Quicksand";
+    background: $palette-black;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 27px;
+  }
+
+  .partner-desc {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 140%; /* 19.6px */
+  }
+
+  .partners-link {
+    float: right;
+    display: flex;
+    margin-top: 35px;
+    width: 160px;
+    padding: 8px 20px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 32px;
+    border: 2px solid $palette-white;
+    color: $palette-white;
+
+    &:hover {
+      background: $palette-white;
+      color: $eoscpl-01;
+    }
+  }
+}
+
+.open-science {
+  padding: 75px 0;
+
+  h3 {
+    font-family: "Quicksand";
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: 0.64px;
+    color: $eoscpl-01;
+    margin-bottom: 30px;
+  }
+
+  .openscience-intro {
+    display: flex;
+    padding: 24px;
+    margin-bottom: 36px;
+    border-radius: 32px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    border: 2px solid $eoscpl-01;
+
+    &.top-intro {
+      border-bottom-left-radius: 0;
+    }
+
+    &.middle-intro {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+
+    &.bottom-intro {
+      border-top-left-radius: 0;
+    }
+
+    .openscience-container {
+      width: 75%;
+
+      .openscience-intro-title {
+        font-size: 24px;
+        font-weight: 500;
+        color: $eoscpl-01;
+        line-height: 140%;
+        margin-bottom: 14px;
+      }
+
+      .openscience-intro-desc {
+        color: $eoscpl-03;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 140%;
+      }
+    }
+
+    .openscience-more-link {
+      display: flex;
+      padding: 8px 20px;
+      justify-content: space-between;
+      font-weight: 400;
+      align-items: center;
+      color: $eoscpl-01;
+      column-gap: 25px;
+      border-radius: 32px;
+      background: $palette-white;
+      border: 2px solid $eoscpl-01;
+      float: right;
+    }
+
+    &:hover {
+      border: 2px solid $eoscpl-02;
+
+      .openscience-intro-title {
+        color: $eoscpl-02;
+      }
+
+      .openscience-more-link {
+        background: $eoscpl-02;
+        color: $palette-white;
+        border: 2px solid $eoscpl-02;
+      }
+    }
+  }
+}
+
+.programme {
+  background: $eoscpl-01;
+  padding: 72px 0;
+  color: $palette-white;
+  font-size: 14px;
+  line-height: 140%;
+
+  h4 {
+    font-family: "Quicksand";
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: 0.64px;
+    color: $palette-white;
+    margin-bottom: 0;
+    text-align: right;
+    padding: 0;
+    border: none;
+  }
+
+  p {
+    padding-top: 10px;
+  }
+
+  .d-flex {
+    align-items: flex-end;
+  }
+
+  .programme-link {
+    float: right;
+    display: flex;
+    margin-top: 35px;
+    width: 100%;
+    padding: 8px 20px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 32px;
+    border: 2px solid $palette-white;
+    color: $palette-white;
+
+    &:hover {
+      background: $palette-white;
+      color: $eoscpl-01;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .eosc-common.top {
+    .container {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+  }
+
+  .eosc-common.white-label {
+    &.top {
+      padding: 10px 0 14px;
+    }
+
+    .left-links {
+      .header-logo-whitelabel {
+        width: 170px;
+        height: 32px;
+        background-size: contain;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .searchbar.whitelabel {
+    .searchbar__select {
+      width: 100px;
+    }
+  }
+  // scss-lint:disable all
+  .landing_page {
+    .landing-header {
+      padding: 35px 0;
+      background-size: cover;
+
+      h1 {
+        font-size: 20px;
+        line-height: 27px;
+        margin: 0 0 20px;
+      }
+
+      .searchbar {
+        max-width: 90%;
+        margin: auto;
+      }
+
+      .intro-text {
+        font-size: 13px;
+        line-height: 20px;
+        max-width: 97%;
+      }
+
+      .browse {
+        width: 95%;
+        margin: 25px auto 0;
+        text-align: center;
+        display: block !important;
+
+        .browse-label {
+          margin-bottom: 10px;
+        }
+
+        .solutions-box {
+          display: block;
+
+          a {
+            margin: 0 5px 15px;
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+    .research-activity {
+      padding: 50px 0;
+
+      h2 {
+        font-size: 25px;
+        line-height: 30px;
+      }
+
+      .activity {
+        width: 95%;
+        margin: 0 auto 25px;
+
+        .activity-texts {
+          .activity-title {
+            font-size: 15px;
+            line-height: 20px;
+            margin-bottom: 5px;
+          }
+
+          .activity-subtitle {
+            font-size: 13px;
+            line-height: 18px;
+          }
+        }
+
+        &:hover {
+          .activity-icon {
+            margin: 0 20px 0 0;
+          }
+        }
+      }
+
+      .activity-wrapper {
+        display: block;
+
+        .text-wrapper {
+          display: block;
+          padding-top: 10px;
+          width: 100%;
+          font-size: 16px;
+          text-align: center;
+          line-height: 28px;
+        }
+      }
+    }
+
+    .support {
+      padding: 0 0 50px;
+
+      h3 {
+        font-size: 25px;
+        line-height: 30px;
+        margin: 40px 0 25px;
+      }
+    }
+
+    .eosc-navy {
+      padding: 45px 15px;
+
+      .mb-5 {
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+      h4 {
+        font-size: 16px;
+        line-height: 22px;
+        margin: 0;
+        text-align: center;
+      }
+
+      .eosc-info-icon {
+        img {
+          width: 45px;
+        }
+      }
+    }
+
+    .provider {
+      padding: 45px 15px 60px;
+
+      h3 {
+        font-size: 20px;
+        line-height: 25px;
+        margin: 25px 0;
+      }
+
+      .communities {
+        margin-top: 100px;
+
+        .lead {
+          font-size: 18px;
+          line-height: 24px;
+          margin: 0 auto 40px;
+        }
+      }
+    }
+
+    .research {
+      padding: 40px 15px 50px;
+
+      h3 {
+        font-size: 25px;
+        line-height: 30px;
+      }
+
+      h4 {
+        font-size: 19px;
+        line-height: 23px;
+      }
+
+      .lead {
+        font-size: 16px;
+        line-height: 26px;
+      }
+
+      .carousel-box {
+        margin-bottom: 30px;
+        height: auto;
+        padding-bottom: 20px;
+      }
+    }
+
+    .questions {
+      padding: 0 0 45px;
+
+      h3 {
+        font-size: 22px;
+        line-height: 25px;
+        margin: 30px 0 15px;
+      }
+
+      .lead {
+        font-size: 17px;
+        line-height: 22px;
+      }
+
+      .contact-form {
+        margin-top: 40px;
+      }
+
+      .container {
+        .questions-wrapper {
+          padding: 0 20px 35px;
+        }
+      }
+    }
+
+    .facilities {
+      padding: 0 15px 55px;
+      background: url("landing_page/facilities.png") 30% 100% no-repeat;
+      background-size: auto 100%;
+      min-height: 310px;
+
+      h3 {
+        font-size: 22px;
+        line-height: 30px;
+        margin: 50px 0 25px;
+      }
+
+      .blue-link {
+        font-size: 15px;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .qa-button {
+    height: auto;
+    font-size: 13px;
+    padding-right: 40px;
+  }
+
+  .learn {
+    .learn-link {
+      margin-bottom: 25px;
+    }
+  }
+
+  .popular-services-box {
+    margin-bottom: 25px;
+  }
+
+  footer {
+    background: $eoscpl-01;
+
+    .footer-left {
+      .footer-row {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        row-gap: 30px;
+      }
+    }
+
+    .footer-right {
+      .row {
+        width: 100%;
+        text-align: center;
+        display: block;
+      }
+    }
+  }
+  // scss-lint:enable all
+  .eoscpl-intro {
+    margin: 15px 0;
+    padding: 15px;
+
+    .eoscpl-intro-desc {
+      font-size: 13px;
+    }
+  }
+
+  .open-science {
+    .openscience-intro {
+      display: flex;
+      padding: 24px;
+      margin-bottom: 36px;
+      border-radius: 32px;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      border: 2px solid $eoscpl-01;
+      align-content: space-between;
+
+      .openscience-container {
+        width: 100%;
+
+        .openscience-intro-desc {
+          font-size: 13px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  .programme h4 {
+    text-align: left;
+    line-height: 120%;
+  }
+
+  .popular-services-box {
+    .popular-title {
+      font-size: 18px;
+    }
+  }
 }
